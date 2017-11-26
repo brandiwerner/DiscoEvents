@@ -24,7 +24,7 @@ public class TagEventList extends AppCompatActivity {
 
     private static final String TAG = "Main Activity Data";
 
-    // This will hold our collection of com.brandi.discoevents.EventData Objects that will be printed to the screen
+    // This will hold our collection of com.brandi.disco events.EventData Objects that will be printed to the screen
     final ArrayList<EventData> events = new ArrayList<EventData>();
 
     @Override
@@ -40,8 +40,6 @@ public class TagEventList extends AppCompatActivity {
         ref.child("Events").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Toast.makeText(TagEventList.this, "The onDataChange ", Toast.LENGTH_LONG).show();
-
                 // get all of the children at this level.
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
 

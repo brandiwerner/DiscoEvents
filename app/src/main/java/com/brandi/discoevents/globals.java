@@ -13,13 +13,42 @@ public class globals {
     private boolean CE;
     private boolean EE;
     private boolean DEPT;
-
+    private int Month;
+    private int Day;
+    private int Year;
     // To stop calling from other classes
     private globals(){
         CS=false;
         CE=false;
         EE=false;
         DEPT=false;
+        Month=0;
+        Day=0;
+        Year=0;
+    }
+
+    public int getDay() {
+        return Day;
+    }
+
+    public void setDay(int day) {
+        Day = day;
+    }
+
+    public int getYear() {
+        return Year;
+    }
+
+    public void setYear(int year) {
+        Year = year;
+    }
+
+    public int getMonth() {
+        return Month;
+    }
+
+    public void setMonth(int month) {
+        Month = month;
     }
 
     public boolean isCS() {

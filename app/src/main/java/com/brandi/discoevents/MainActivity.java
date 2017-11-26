@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Selection;
 import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    globals g = globals.getInstance();  // Global Variables
 
     // Intent used for the tag search button, this is used in the onClick listener
     private Intent intent;
@@ -58,7 +61,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
-                Toast.makeText(getApplicationContext(), "" +dayOfMonth, Toast.LENGTH_SHORT).show();
+
+                // Setting the global variable for the clicked day on the calender that way pop can display the events corresponding to that date
+                g.setYear(year);
+                g.setDay(dayOfMonth);
+                g.setMonth(month+1);
+
+                //Toast.makeText(getApplicationContext(), "" +month, Toast.LENGTH_SHORT).show();
  //               TextView evLog = (TextView) findViewById(R.id.eventLog);
  //               evLog.setMovementMethod(new ScrollingMovementMethod());
 
@@ -91,5 +100,4 @@ public class MainActivity extends AppCompatActivity {
         intent = new Intent(MainActivity.this, tagSearchCheckboxes.class);
         startActivity(intent);
     }
-
 }
