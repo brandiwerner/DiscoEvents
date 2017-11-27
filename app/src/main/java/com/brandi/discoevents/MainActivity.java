@@ -19,6 +19,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     globals g = globals.getInstance();  // Global Variables
 
+    // Here is what i changed
+
     // Intent used for the tag search button, this is used in the onClick listener
     private Intent intent;
     //private TextView mTextMessage;
